@@ -6,7 +6,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { CartProvider } from '@/hooks/use-cart';
 import { Toaster } from "@/components/ui/toaster"
-import { AnimatedBackground } from '@/components/common/AnimatedBackground';
+import { VideoBackground } from '@/components/common/VideoBackground';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -28,7 +28,7 @@ export default function RootLayout({
       <body className={cn('font-sans antialiased', inter.variable)}>
         <CartProvider>
           <div className="relative flex min-h-screen flex-col">
-            <AnimatedBackground />
+            <VideoBackground />
             <Header />
             <main className="flex-1 z-10">
               {children}

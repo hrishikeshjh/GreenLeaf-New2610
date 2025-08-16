@@ -50,22 +50,22 @@ export default function CheckoutPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="font-headline text-4xl font-bold text-center mb-8">Checkout</h1>
+      <h1 className="text-4xl font-bold text-center mb-8">Checkout</h1>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         <div>
-            <Card className="bg-card/50 backdrop-blur-sm">
+            <Card>
                 <CardHeader>
-                    <CardTitle className="font-headline">Shipping & Payment</CardTitle>
+                    <CardTitle>Shipping & Payment</CardTitle>
                     <CardDescription>Please enter your details to complete the purchase.</CardDescription>
                 </CardHeader>
                 <CardContent>
                     <Form {...form}>
                         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                            <h3 className="font-headline text-lg font-semibold">Contact Information</h3>
+                            <h3 className="text-lg font-semibold">Contact Information</h3>
                             <FormField control={form.control} name="email" render={({ field }) => (
                                 <FormItem><FormLabel>Email</FormLabel><FormControl><Input placeholder="you@example.com" {...field} /></FormControl><FormMessage /></FormItem>
                             )}/>
-                            <h3 className="font-headline text-lg font-semibold">Shipping Address</h3>
+                            <h3 className="text-lg font-semibold">Shipping Address</h3>
                             <FormField control={form.control} name="name" render={({ field }) => (
                                 <FormItem><FormLabel>Full Name</FormLabel><FormControl><Input placeholder="Jane Doe" {...field} /></FormControl><FormMessage /></FormItem>
                             )}/>
@@ -80,7 +80,7 @@ export default function CheckoutPage() {
                                     <FormItem><FormLabel>ZIP Code</FormLabel><FormControl><Input {...field} /></FormControl><FormMessage /></FormItem>
                                 )}/>
                             </div>
-                            <h3 className="font-headline text-lg font-semibold">Payment Details</h3>
+                            <h3 className="text-lg font-semibold">Payment Details</h3>
                              <FormField control={form.control} name="cardName" render={({ field }) => (
                                 <FormItem><FormLabel>Name on Card</FormLabel><FormControl><Input {...field} /></FormControl><FormMessage /></FormItem>
                             )}/>
@@ -103,9 +103,9 @@ export default function CheckoutPage() {
             </Card>
         </div>
         <div className="order-first lg:order-last">
-            <Card className="sticky top-24 bg-card/50 backdrop-blur-sm">
+            <Card className="sticky top-24">
                 <CardHeader>
-                    <CardTitle className="font-headline">Your Order</CardTitle>
+                    <CardTitle>Your Order</CardTitle>
                 </CardHeader>
                 <CardContent>
                     <ul className="space-y-4">
@@ -118,7 +118,7 @@ export default function CheckoutPage() {
                                 <div className="flex-1">
                                     <p className="font-semibold">{item.plant.name}</p>
                                 </div>
-                                <p className="font-semibold">${(item.plant.price * item.quantity).toFixed(2)}</p>
+                                <p className="font-semibold">₹{(item.plant.price * item.quantity).toFixed(2)}</p>
                             </li>
                         ))}
                     </ul>
@@ -126,7 +126,7 @@ export default function CheckoutPage() {
                     <div className="space-y-2">
                         <div className="flex justify-between">
                             <p>Subtotal</p>
-                            <p>${cartTotal.toFixed(2)}</p>
+                            <p>₹{cartTotal.toFixed(2)}</p>
                         </div>
                         <div className="flex justify-between">
                             <p>Shipping</p>
@@ -135,7 +135,7 @@ export default function CheckoutPage() {
                          <Separator className="my-2"/>
                         <div className="flex justify-between font-bold text-lg">
                             <p>Total</p>
-                            <p>${cartTotal.toFixed(2)}</p>
+                            <p>₹{cartTotal.toFixed(2)}</p>
                         </div>
                     </div>
                 </CardContent>

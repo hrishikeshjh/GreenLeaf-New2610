@@ -16,7 +16,7 @@ export default function CartPage() {
     return (
       <div className="container mx-auto px-4 py-16 text-center">
         <XCircle className="mx-auto h-24 w-24 text-muted-foreground" />
-        <h1 className="font-headline text-4xl font-bold mt-8">Your Cart is Empty</h1>
+        <h1 className="text-4xl font-bold mt-8">Your Cart is Empty</h1>
         <p className="mt-4 text-lg text-muted-foreground">Looks like you haven't added any plants yet.</p>
         <Button asChild className="mt-8" size="lg">
           <Link href="/plants">Start Shopping</Link>
@@ -27,10 +27,10 @@ export default function CartPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-       <h1 className="font-headline text-4xl font-bold text-center mb-8">Your Shopping Cart</h1>
+       <h1 className="text-4xl font-bold text-center mb-8">Your Shopping Cart</h1>
        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2">
-            <Card className="bg-card/50 backdrop-blur-sm">
+            <Card>
                 <CardContent className="p-0">
                     <Table>
                         <TableHeader>
@@ -50,7 +50,7 @@ export default function CartPage() {
                                 </TableCell>
                                 <TableCell>
                                     <p className="font-bold">{item.plant.name}</p>
-                                    <p className="text-sm text-muted-foreground">${item.plant.price.toFixed(2)}</p>
+                                    <p className="text-sm text-muted-foreground">₹{item.plant.price.toFixed(2)}</p>
                                 </TableCell>
                                 <TableCell>
                                     <div className="flex items-center justify-center gap-2">
@@ -59,7 +59,7 @@ export default function CartPage() {
                                         <Button size="icon" variant="outline" onClick={() => updateQuantity(item.plant.id, item.quantity + 1)}><Plus className="h-4 w-4" /></Button>
                                     </div>
                                 </TableCell>
-                                <TableCell className="text-right font-bold">${(item.plant.price * item.quantity).toFixed(2)}</TableCell>
+                                <TableCell className="text-right font-bold">₹{(item.plant.price * item.quantity).toFixed(2)}</TableCell>
                                 <TableCell className="text-right">
                                     <Button size="icon" variant="ghost" className="text-destructive hover:text-destructive" onClick={() => removeFromCart(item.plant.id)}><Trash2 className="h-4 w-4" /></Button>
                                 </TableCell>
@@ -71,14 +71,14 @@ export default function CartPage() {
             </Card>
         </div>
         <div>
-            <Card className="sticky top-24 bg-card/50 backdrop-blur-sm">
+            <Card className="sticky top-24">
                 <CardHeader>
-                    <CardTitle className="font-headline">Order Summary</CardTitle>
+                    <CardTitle>Order Summary</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                     <div className="flex justify-between">
                         <span>Subtotal ({itemCount} items)</span>
-                        <span>${cartTotal.toFixed(2)}</span>
+                        <span>₹{cartTotal.toFixed(2)}</span>
                     </div>
                     <div className="flex justify-between">
                         <span>Shipping</span>
@@ -86,7 +86,7 @@ export default function CartPage() {
                     </div>
                     <div className="flex justify-between font-bold text-lg border-t pt-4">
                         <span>Total</span>
-                        <span>${cartTotal.toFixed(2)}</span>
+                        <span>₹{cartTotal.toFixed(2)}</span>
                     </div>
                 </CardContent>
                 <CardFooter>

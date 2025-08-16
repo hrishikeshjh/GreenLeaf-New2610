@@ -22,7 +22,7 @@ export function Header() {
       <div className="container mx-auto flex h-16 max-w-screen-2xl items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2">
           <Leaf className="h-6 w-6 text-primary" />
-          <span className="font-headline text-2xl font-bold">Verdant Vista</span>
+          <span className="text-2xl font-bold">Verdant Vista</span>
         </Link>
 
         {isMobile ? (
@@ -49,7 +49,7 @@ export function Header() {
           <div className="flex items-center gap-6">
             <nav className="flex items-center gap-6 text-sm">
               {navLinks.map((link) => (
-                <Link key={link.href} href={link.href} className="font-medium text-foreground/60 transition-colors hover:text-foreground/80">
+                <Link key={link.href} href={link.href} className="font-medium text-muted-foreground transition-colors hover:text-foreground">
                   {link.label}
                 </Link>
               ))}
@@ -69,7 +69,7 @@ function CartButton({ itemCount }: { itemCount: number }) {
         <div className="relative">
           <ShoppingCart className="h-5 w-5" />
           {itemCount > 0 && (
-            <span className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-accent text-xs text-accent-foreground">
+            <span className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-xs text-primary-foreground">
               {itemCount}
             </span>
           )}

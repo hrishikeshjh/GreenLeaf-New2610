@@ -5,8 +5,8 @@ export default function PlantsPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <section className="text-center mb-12">
-        <h1 className="font-headline text-5xl md:text-6xl font-bold">Our Plant Collection</h1>
-        <p className="mt-4 text-lg max-w-2xl mx-auto text-foreground/80">
+        <h1 className="text-5xl md:text-6xl font-bold">Our Plant Collection</h1>
+        <p className="mt-4 text-lg max-w-2xl mx-auto text-muted-foreground">
           Browse our curated selection of beautiful and healthy houseplants.
         </p>
       </section>

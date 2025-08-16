@@ -62,9 +62,9 @@ export function RecommendationClient() {
 
   return (
     <div className="max-w-4xl mx-auto">
-        <Card className="bg-card/50 backdrop-blur-sm">
+        <Card>
             <CardHeader>
-                <CardTitle className="font-headline text-2xl">Your Preferences</CardTitle>
+                <CardTitle className="text-2xl">Your Preferences</CardTitle>
                 <CardDescription>Fill out the form below to get your personalized plant recommendations.</CardDescription>
             </CardHeader>
             <CardContent>
@@ -149,12 +149,12 @@ export function RecommendationClient() {
 
         {recommendations.length > 0 && (
             <div className="mt-12">
-                <h2 className="font-headline text-3xl font-bold text-center mb-8">Our Recommendations For You</h2>
-                <Card className="bg-card/50 backdrop-blur-sm">
+                <h2 className="text-3xl font-bold text-center mb-8">Our Recommendations For You</h2>
+                <Card>
                     <CardContent className="p-6">
                         <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                             {recommendations.map((plant, index) => (
-                                <li key={index} className="flex items-center gap-4 p-4 rounded-lg bg-background/50">
+                                <li key={index} className="flex items-center gap-4 p-4 rounded-lg bg-secondary">
                                     <Sprout className="h-6 w-6 text-primary" />
                                     <span className="font-semibold text-lg">{plant}</span>
                                 </li>
